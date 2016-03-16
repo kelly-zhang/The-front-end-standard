@@ -1,2 +1,2 @@
 # The-front-end-standard
-xyz-front-end development specification
+新一站官网前端开发规范
