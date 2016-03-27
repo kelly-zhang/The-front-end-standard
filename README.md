@@ -18,12 +18,15 @@
 1. 引用规范
 2. 命名规范
 3. 编写规范
-4. 属性编写顺序
 5. LESS语法
 6. 标签私有定义class
-7. css属性书写顺序 
+7. 属性书写顺序 
 建议：遵循布局定位属性–>自身属性–>文本属性–>其他属性
 布局定位属性主要包括: margin、padding、float（包括clear）、position（相应的 top,right,bottom,left）、display、visibility、overflow等；自身属性主要包括: width & height & background & border; 文本属性主要包括：font、color、text-align、text-decoration、text-indent等；其他属性包括: list-style(列表样式)、vertical-vlign、cursor、z-index(层叠顺序) 、zoom等.我所列出的这些属性只是最常用到的
 8. 书写代码前，考虑好代码的重复利用率
-9. 
+9. 样式表中中文字体，务必转成unicode码, 以避免编码错误时乱码;
+10. 背景图片请尽可能使用sprite技术, 减小http请求, 考虑到多人协作开发, sprite按模块制作;
+11. 使用table时，初始化表格样式放在reset中，table{border:0;margin:0;border-collapse:collapse;} table th, table td{padding:0;}
+12. 做好注释，大区块必须做，小区块特殊处理加好注释。
+13. 代码缩进一致。
 
