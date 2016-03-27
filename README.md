@@ -11,22 +11,22 @@
 ###3. 标签闭合。```<div></div>,<br>单标签不闭合```
 
 ###4. 标签使用符合语义化。
-      每个标签元素都有符合的意义和语境。
-        div使用于布局，
-        span行内元素，
-        a超链接，
-        p定义段落，
-        audio定义声音，
-        b定义粗体，
-        section定义文档中的区段，
-        article定义来自外部的源内容，
-        aside定义，
-        hgroup定义，
-        header定义，
-        footer定义，
-        nav定义，
-        figure定义，
-        figcation定义 等等 
+      *  每个标签元素都有符合的意义和语境。
+      *  div使用于布局，
+      *  span行内元素，
+      *  a超链接，
+      *  p定义段落，
+      *  audio定义声音，
+      *  b定义粗体，
+      *  section定义文档中的区段，
+      *  article定义来自外部的源内容，
+      *  aside定义，
+      *  hgroup定义，
+      *  header定义，
+      *  footer定义，
+      *  nav定义，
+      *  figure定义，
+      *  figcation定义 等等 
         
         
 ###5. 标签嵌套正确，
@@ -44,17 +44,17 @@
 
 
 ##CSS编码规范
-1. 引用规范
-2. 命名规范
-3. 编写规范
-   > 一、尽量不顺便改动基础样式和公用css库
-   > 二、优雅降级保证用户可以有更好的体验，但也做好必要浏览器的可使用。
+###1. 引用规范
+###2. 命名规范
+###3. 编写要求
+      一、尽量不顺便改动基础样式和公用css库
+      二、优雅降级保证用户可以有更好的体验，但要保证其他存在使用浏览器的可使用性。
 
-5. LESS语法
-6. 标签私有定义class
-7. 属性书写顺序 
-建议：遵循布局定位属性–>自身属性–>文本属性–>其他属性
-布局定位属性主要包括: margin、padding、float（包括clear）、position（相应的 top,right,bottom,left）、display、visibility、overflow等；自身属性主要包括: width & height & background & border; 文本属性主要包括：font、color、text-align、text-decoration、text-indent等；其他属性包括: list-style(列表样式)、vertical-vlign、cursor、z-index(层叠顺序) 、zoom等.我所列出的这些属性只是最常用到的
+###4. LESS语法
+###5. 标签私有定义class
+###6. 属性书写顺序 
+      建议：遵循布局定位属性–>自身属性–>文本属性–>其他属性
+      布局定位属性主要包括: margin、padding、float（包括clear）、position（相应的        top,right,bottom,left）、display、visibility、overflow等；自身属性主要包括: width & height & background & border; 文本属性主要包括：font、color、text-align、text-decoration、text-indent等；其他属性包括: list-style(列表样式)、vertical-vlign、cursor、z-index(层叠顺序) 、zoom等.我所列出的这些属性只是最常用到的
 8. 书写代码前，考虑好代码的重复利用率
 9. 样式表中中文字体，务必转成unicode码, 以避免编码错误时乱码;
 10. 背景图片请尽可能使用sprite技术, 减小http请求, 考虑到多人协作开发, sprite按模块制作;
