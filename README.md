@@ -1,14 +1,13 @@
 #新一站官网前端编码规范
-
-规范目的：提高团队协作效率，利于前端后期维护，输出高质量代码。
+ 规范目的：提高团队协作效率，利于前端后期维护，输出高质量代码。
 
 ##HTML编码规则
 ###1. <!DOCTYPE html>。
       添加标准模式，确保浏览器拥有一致的表现。
       
-###2. UTF-8编码。```<meta charest="utf-8">```
+###2. UTF-8编码。`<meta charest="utf-8">`
 
-###3. 标签闭合。```<div></div>,<br>单标签不闭合```
+###3. 标签闭合。`<div></div>,<br>单标签不闭合`
 
 ###4. 标签使用符合语义化。
       *  每个标签元素都有符合的意义和语境。
@@ -54,16 +53,16 @@
 ###5. 标签私有定义class
 ###6. 属性书写顺序 
       建议：遵循布局定位属性–>自身属性–>文本属性–>其他属性
-      布局定位属性主要包括: margin、padding、float（包括clear）、position（相应的       top,right,bottom,left）、display、visibility、overflow等；
-      自身属性主要包括: width & height & background & border;                 文本属性主要包括：font、color、text-align、text-decoration、text-indent等；
-      其他属性包括: list-style(列表样式)、vertical-vlign、cursor、z-index(层叠顺序) 、zoom等。
+      布局定位属性主要包括: `margin、padding、float（包括clear）、position（相应的       top,right,bottom,left）、display、visibility、overflow等；`
+      `自身属性主要包括: width & height & background & border;    `             `文本属性主要包括：font、color、text-align、text-decoration、text-indent等；`
+     ` 其他属性包括: list-style(列表样式)、vertical-vlign、cursor、z-index(层叠顺序) 、zoom等。`
       
 ###7. 书写代码前，考虑好代码的重复利用率
 
 ###8. 样式表种有中文字体，务必转成unicode码, 以避免编码错误时乱码;
 
 ###9. 背景图片请尽可能使用sprite技术, 减小http请求, 考虑到多人协作开发, sprite按模块制作;
-###10. 使用table时，初始化表格样式放在reset中，table{border:0;margin:0;border-collapse:collapse;} table th, table td{padding:0;}
+###10. 使用table时，初始化表格样式放在reset中，`table{border:0;margin:0;border-collapse:collapse;} table th, table td{padding:0;}`
 ###11. 做好注释，大区块必须做，小区块特殊处理加好注释。
 ###12. 代码缩进一致。
 ###13. 命名规则：
