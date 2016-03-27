@@ -4,9 +4,10 @@
 
 ##HTML编码规则
 1. <!DOCTYPE html>。
+   添加标准模式，确保浏览器拥有一致的表现。
 2. UTF-8。```<meta charest="utf-8">```
 3. 标签闭合。```<div></div>,<br>单标签不闭合```
-4. 标签使用符合语义化。每个标签元素都有符合的意义和语境。```div使用于块级结构，span行内元素，a超链接，p定义段落，audio定义声音，b定义粗体等等```
+4. 标签使用符合语义化。每个标签元素都有符合的意义和语境。```div使用于布局，span行内元素，a超链接，p定义段落，audio定义声音，b定义粗体，sectiob定义文档中的区段，article定义来自外部的源内容，aside定义，hgroup定义，header定义，footer定义，nav定义，figure定义，figcation定义，等等 内联元素不能包含块级元素```
 5. 标签嵌套正确，`<a><div></div></a>`错误；`<a><span></span></a>`正确
 6. 结构，样式，行为分离。
 7. 头部引用样式，底部引用脚本。
@@ -129,6 +130,7 @@ W3C CSS validator：http://jigsaw.w3.org/css-validator/
 合作伙伴：partner
 友情链接：link
 版权：copyright\
+14. 每个样式属性后面加上“;”
 15. 浏览器兼容性 CSS hack
 
 一、标识区别：区别IE6,IE7,IE8,FF。1. IE都能识别* ; 标准浏览器(如FF)不能识别*；
@@ -137,3 +139,6 @@ W3C CSS validator：http://jigsaw.w3.org/css-validator/
 4. IE8能识别\ 9 例如：background:red \9;
 5. firefox不能识别*，但能识别!important;
 16. 代码写得足够标准，可以避免出现很多奇怪的问题出现。
+17. 通知IE采用识别的最高模式
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
