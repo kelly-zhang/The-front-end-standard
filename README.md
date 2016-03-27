@@ -12,16 +12,35 @@
 
 ###4. 标签使用符合语义化。
       > 每个标签元素都有符合的意义和语境。
-        div使用于布局，span行内元素，a超链接，p定义段落，audio定义声音，b定义粗体，sectiob定义文档中的区段，article定义来自外部的源内容，aside定义，hgroup定义，header定义，footer定义，nav定义，figure定义，figcation定义，等等 内联元素不能包含块级元素
+        div使用于布局，
+        span行内元素，
+        a超链接，
+        p定义段落，
+        audio定义声音，
+        b定义粗体，
+        section定义文档中的区段，
+        article定义来自外部的源内容，
+        aside定义，
+        hgroup定义，
+        header定义，
+        footer定义，
+        nav定义，
+        figure定义，
+        figcation定义 等等 
         
-###5. 标签嵌套正确，`<a><div></div></a>`错误；`<a><span></span></a>`正确
+        
+###5. 标签嵌套正确，
+      > <a><div></div></a>错误；<a><span></span></a>正确
+      
 ###6. 结构，样式，行为分离。
 ###7. 头部引用样式，底部引用脚本。
 ###8. 代码格式化。
       > 块级元素新起一行，并缩进两个空格
       
-###9. 可通过W3C验证你的代码
-      ```W3C CSS validator：http://jigsaw.w3.org/css-validator/```
+###9. 内联元素不能包含块级元素
+
+###10. 可通过W3C验证你的代码
+       W3C CSS validator：http://jigsaw.w3.org/css-validator/
 
 
 ##CSS编码规范
