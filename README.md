@@ -176,4 +176,4 @@
        
 ###16. 代码写得足够标准，可以避免出现很多奇怪的问题出现。
 ###17. 通知IE采用识别的最高模式。
-> <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+       <meta http-equiv="X-UA-Compatible" content="IE=Edge">
