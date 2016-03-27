@@ -21,3 +21,9 @@
 4. 属性编写顺序
 5. LESS语法
 6. 标签私有定义class
+7. css属性书写顺序 
+建议：遵循布局定位属性–>自身属性–>文本属性–>其他属性
+布局定位属性主要包括: margin、padding、float（包括clear）、position（相应的 top,right,bottom,left）、display、visibility、overflow等；自身属性主要包括: width & height & background & border; 文本属性主要包括：font、color、text-align、text-decoration、text-indent等；其他属性包括: list-style(列表样式)、vertical-vlign、cursor、z-index(层叠顺序) 、zoom等.我所列出的这些属性只是最常用到的
+8. 书写代码前，考虑好代码的重复利用率
+9. 
+
