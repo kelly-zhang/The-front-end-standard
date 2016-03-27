@@ -3,17 +3,25 @@
 > 规范目的：提高团队协作效率，利于前端后期维护，输出高质量代码。
 
 ##HTML编码规则
-1. <!DOCTYPE html>。
-   添加标准模式，确保浏览器拥有一致的表现。
-2. UTF-8。```<meta charest="utf-8">```
-3. 标签闭合。```<div></div>,<br>单标签不闭合```
-4. 标签使用符合语义化。每个标签元素都有符合的意义和语境。```div使用于布局，span行内元素，a超链接，p定义段落，audio定义声音，b定义粗体，sectiob定义文档中的区段，article定义来自外部的源内容，aside定义，hgroup定义，header定义，footer定义，nav定义，figure定义，figcation定义，等等 内联元素不能包含块级元素```
-5. 标签嵌套正确，`<a><div></div></a>`错误；`<a><span></span></a>`正确
-6. 结构，样式，行为分离。
-7. 头部引用样式，底部引用脚本。
-8. 代码格式化。```块级元素新起一行，并缩进两个空格```
-9. 可通过W3C验证你的代码
-W3C CSS validator：http://jigsaw.w3.org/css-validator/
+###1. <!DOCTYPE html>。
+      > 添加标准模式，确保浏览器拥有一致的表现。
+      
+###2. UTF-8。```<meta charest="utf-8">```
+
+###3. 标签闭合。```<div></div>,<br>单标签不闭合```
+
+###4. 标签使用符合语义化。
+      > 每个标签元素都有符合的意义和语境。
+        div使用于布局，span行内元素，a超链接，p定义段落，audio定义声音，b定义粗体，sectiob定义文档中的区段，article定义来自外部的源内容，aside定义，hgroup定义，header定义，footer定义，nav定义，figure定义，figcation定义，等等 内联元素不能包含块级元素
+        
+###5. 标签嵌套正确，`<a><div></div></a>`错误；`<a><span></span></a>`正确
+###6. 结构，样式，行为分离。
+###7. 头部引用样式，底部引用脚本。
+###8. 代码格式化。
+      > 块级元素新起一行，并缩进两个空格
+      
+###9. 可通过W3C验证你的代码
+      ```W3C CSS validator：http://jigsaw.w3.org/css-validator/```
 
 
 ##CSS编码规范
