@@ -125,4 +125,11 @@
 合作伙伴：partner
 友情链接：link
 版权：copyright\
+15. 浏览器兼容性 CSS hack
 
+一、标识区别：区别IE6,IE7,IE8,FF。1. IE都能识别* ; 标准浏览器(如FF)不能识别*；
+2. IE6能识别*，但不能识别 !important; IE6在样式前面加_
+3. IE7能识别*，也能识别!important;
+4. IE8能识别\ 9 例如：background:red \9;
+5. firefox不能识别*，但能识别!important;
+16. 代码写得足够标准，可以避免出现很多奇怪的问题出现。
