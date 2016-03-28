@@ -43,6 +43,9 @@
 ####10. 可通过W3C验证你的代码
        W3C HTML validator：http://validator.w3.org/
        W3C CSS validator：http://jigsaw.w3.org/css-validator/validator.html.zh-cn
+       
+####11. 采用小写编码      
+
 ---
 
 ##CSS编码规范
