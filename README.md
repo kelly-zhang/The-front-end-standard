@@ -39,7 +39,8 @@
 ###9. 内联元素不能包含块级元素
 
 ###10. 可通过W3C验证你的代码
-       W3C CSS validator：http://jigsaw.w3.org/css-validator/
+       W3C HTML validator：http://validator.w3.org/
+       W3C CSS validator：http://jigsaw.w3.org/css-validator/validator.html.zh-cn
 ---
 
 ##CSS编码规范
