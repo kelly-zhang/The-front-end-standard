@@ -1,77 +1,115 @@
 # 新一站官网前端编码规范
- 规范目的：提高团队协作效率，利于前端后期维护，输出高质量代码。
+规范目的==========================提高团队协作效率，利于前端后期维护，输出高质量代码。
 
-## HTML编码规则
-#### 1. <!DOCTYPE html>。
-      添加标准模式，确保浏览器拥有一致的表现。
+目录：
+
+[一. HTML编码规则](#html)
+
+[二. JSP操作规则](#jsp)
+
+[三. CSS编码规范](#css)
+
+
+## <a name='html'>HTML编码规则</a>
+### 1. 通用规则
+
+#### 1.1 文档模式
+      统一采用标准模式，<!DOCTYPE html>，确保浏览器拥有一致的表现。
       
-#### 2. UTF-8编码。`<meta charest="utf-8">`
+#### 1.2 明确字符编码UTF-8，精简编码形式
+      <meta charest="utf-8">
 
-#### 3. 标签闭合。`<div></div>,<br>单标签不闭合`
+#### 1.3 标签须闭合
+```
+   *  <div></div>,<p></p>,<ul></ul>,<ol></ol>,<h1></h1>等等。
+   *  <br>单标签不闭合，在Doctype: HTML 4.01 Strict:<br>是正确写法，而<br />是错误的。HTML5标准下推荐不闭合写法。
+```
 
-#### 4. 标签使用符合语义化。
-      *  每个标签元素都有符合的意义和语境。
-      *  div使用于布局，
-      *  span行内元素，
-      *  a超链接，
-      *  p定义段落，
-      *  audio定义声音，
-      *  b定义粗体，
-      *  section定义文档中的区段，
-      *  article定义来自外部的源内容，
-      *  aside定义，
-      *  hgroup定义，
-      *  header定义，
-      *  footer定义，
-      *  nav定义，
-      *  figure定义，
-      *  figcation定义 等等 
+#### 1.4 标签使用符合语义化
+		*  div用于布局，无特殊含义
+		*  span定义行内元素，【行内标签】
+		*  a定义超链接，【行内标签】
+		*  p定义段落，【行内标签】
+		*  audio定义声音
+		*  b定义粗体
+		*  section定义文档中的区段
+		*  article定义来自外部的源内容
+		*  aside定义article以外的内容，aside内容与article内容相关
+		*  header定义文档的页眉
+		*  footer定义文档或节的页脚
+		*  nav定义导航链接部分
+		*  figure定义独立的流内容（图像、图表、照片、代码等等）
+		*  figcation定义figure元素的标题
+		*  ...
         
         
-#### 5. 标签嵌套正确，
-      <a><div></div></a>错误；<a><span></span></a>正确
-      <li>要与<ul>或<ol>配合使用
-      <dd>或<dt>要与<dl>配合使用
-      
-#### 6. 结构，样式，行为分离。
-#### 7. 头部引用样式，底部引用脚本。
-#### 8. 代码格式化。
-      块级元素新起一行，并缩进两个空格
-      
-#### 9. 内联元素不能包含块级元素
+#### 1.5 标签嵌套正确
+```      
+   * 内联元素不可以嵌套块级元素如：<a><div></div></a>错误；<a><span></span></a>正确
+   * <li>不可以单独使用，要与<ul>或<ol>配合使用
+   * <dd>或<dt>要与<dl>配合使用
+```
 
-#### 10. 可通过W3C验证你的代码
+#### 1.6 标签一律采用小写编码  
+
+#### 1.7 编码风格格式化
+       块级元素新起一行，并统一缩进两个空格
+
+### 2. 性能考虑
+#### 2.1 头部引用样式，底部引用脚本
+#### 2.2 减少无用标签的使用
+
+### 3.利于后期维护
+#### 3.1 结构，样式，行为分离
+#### 3.2 不同模块之间做好注释
+
+### 4.W3C验证
        W3C HTML validator：http://validator.w3.org/
-       W3C CSS validator：http://jigsaw.w3.org/css-validator/validator.html.zh-cn
-       
-#### 11. 采用小写编码      
 
----
+## <a name='jsp'>JSP操作规则</a>
+#### 1. 完整页面编写时，确保头部存放推广代码
+#### 2. 引用样式调用压缩过的样式
+#### 3. 协助开发检查JSP标签是否嵌套正确
+	    目的是不破坏HTML标签的完整闭合
+#### 4. 脚本使用放入JSP标签中
 
-## CSS编码规范
-#### 1. 引用规范
-#### 2. 命名规范
-#### 3. 编写要求
-      一、尽量不顺便改动基础样式和公用css库
-      二、优雅降级保证用户可以有更好的体验，但要保证其他存在使用浏览器的可使用性。
 
-#### 4. LESS语法
-#### 5. 标签私有定义class
-#### 6. 属性书写顺序 
-      建议：遵循布局定位属性–>自身属性–>文本属性–>其他属性
-      布局定位属性主要包括: `margin、padding、float（包括clear）、position（相应的       top,right,bottom,left）、display、visibility、overflow等；`
-      `自身属性主要包括: width & height & background & border;    `             `文本属性主要包括：font、color、text-align、text-decoration、text-indent等；`
-     ` 其他属性包括: list-style(列表样式)、vertical-vlign、cursor、z-index(层叠顺序) 、zoom等。`
-      
-#### 7. 书写代码前，考虑好代码的重复利用率
+## <a name='css'>CSS编码规范</a>
+### 1.通用规则
 
-####8. 样式表种有中文字体，务必转成unicode码, 以避免编码错误时乱码;
+#### 1.1 引用规范
+       *  GULP编译
+       *  assets下的样式分布图
 
-#### 9. 背景图片请尽可能使用sprite技术, 减小http请求, 考虑到多人协作开发, sprite按模块制作;
-#### 10. 使用table时，初始化表格样式放在reset中，`table{border:0;margin:0;border-collapse:collapse;} table th, table td{padding:0;}`
-#### 11. 做好注释，大区块必须做，小区块特殊处理加好注释。
-#### 12. 代码缩进一致。
-#### 13. 命名规则：
+#### 1.2 命名规范
+      * 标签私有定义class,私有页面中不允许定义.btn这样的class
+      *  span,p,li这样的标签最好单独定义class，避免如：ul li{xxx:xxx;}，原因是样式的解析是从右向左的，解释时会查找所有的li一遍，这样影响性能
+#### 1.3 编写要求
+      * 尽量不顺便改动基础样式和公用LESS库
+      * 优雅降级保证用户可以有更好的体验，但要保证其他存在浏览器的可使用性
+      * 代码缩进一致
+      * 每个样式属性后面加上“;”
+			  
+#### 1.4 属性书写顺序 
+      建议：布局定位属性–>自身属性–>文本属性–>其他属性
+      * 布局定位属性主要包括: `margin、padding、float（包括clear）、position（相应的top,right,bottom,left）、display、visibility、overflow等
+      * 自身属性主要包括: width & height & background & border
+      * 文本属性主要包括：font、color、text-align、text-decoration、text-indent等
+      * 其他属性包括: list-style(列表样式)、vertical-vlign、cursor、z-index(层叠顺序) 、zoom等
+
+#### 1.5 样式表种有中文字体，务必转成unicode码, 以避免编码错误时乱码
+       font-family:"microsoft yahei"; 
+#### 1.6 做好注释，大区块必须做，小区块特殊处理部分加好注释
+		//这里是xxx内容，编译时可以过滤掉注释
+
+### 2. LESS语法
+#### 2.1 LESS方法的使用
+
+### 3. 性能考虑      
+#### 3.1 书写代码前，考虑好代码的重复利用率
+#### 3.2 背景图片请尽可能使用sprite技术, 减小http请求, 考虑到多人协作开发, sprite可以按模块制作
+
+### 4. 命名参考：
       （一）常用命名
        头：header
        内容：content/container
@@ -110,12 +148,8 @@
        投票：vote
        合作伙伴：partner
        
-       (二)注释的写法:
-       /* Footer */
-       内容区
-       /* End Footer */
        
-       (三)id的命名:
+       (二)id的命名:
        (1)页面结构
        容器: container
        页头：header
@@ -169,20 +203,26 @@
        投票：vote
        合作伙伴：partner
        友情链接：link
-       版权：copyright\
+       版权：copyright
 
-#### 14. 每个样式属性后面加上“;”
 
-#### 15. 浏览器兼容性 CSS hack
-       一、标识区别：区别IE6,IE7,IE8,FF。1. IE都能识别* ; 标准浏览器(如FF)不能识别*；
+### 5. 浏览器兼容性 CSS hack
+       标识区别：区别IE6,IE7,IE8,FF。
+       1. IE都能识别* ; 标准浏览器(如FF)不能识别*；
        2. IE6能识别*，但不能识别 !important; IE6在样式前面加_
        3. IE7能识别*，也能识别!important;
-       4. IE8能识别\ 9 例如：background:red \9;
+       4. IE8能识别9 例如：background:red 9;
        5. firefox不能识别*，但能识别!important;
-       
-#### 16. 代码写得足够标准，可以避免出现很多奇怪的问题出现。
-#### 17. 通知IE采用识别的最高模式。
+
+### 6. 通知IE采用识别的最高模式。(特殊情况使用，待斟酌)
        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+### 7. table样式定义
+       初始化表格样式放在reset中，table{border:0;margin:0;border-collapse:collapse;} table th, table td{padding:0;}
+
+### 8. W3C验证
+        W3C CSS validator：http://jigsaw.w3.org/css-validator/validator.html.zh-cn
+
 ## WEB标准参考
   W3C国际站：http://www.w3.org/
   
