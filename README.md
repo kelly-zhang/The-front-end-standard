@@ -1,14 +1,25 @@
-# 新一站官网前端编码规范
 规范目的==========================提高团队协作效率，利于前端后期维护，输出高质量代码。
 
 目录：
 
 [一. HTML编码规则](#html)
+1. 通用规则
+2. 性能考虑
+3. 利于后期维护
+4. W3C验证
 
 [二. JSP操作规则](#jsp)
 
 [三. CSS编码规范](#css)
+1. 通用规则
+2. LESS语法
+3. 性能考虑
+4. 命名参考
+5. 浏览器兼容性 CSS hack
+6. 通知IE采用识别的最高模式。
+7. table样式定义
 
+四.WEB标准参考
 
 ## <a name='html'>HTML编码规则</a>
 ### 1. 通用规则
@@ -22,7 +33,7 @@
 #### 1.3 标签须闭合
 ```
    *  <div></div>,<p></p>,<ul></ul>,<ol></ol>,<h1></h1>等等。
-   *  <br>单标签不闭合，在Doctype: HTML 4.01 Strict:<br>是正确写法，而<br />是错误的。HTML5标准下推荐不闭合写法。
+   *  <br>,<hr>,<img>,<input>,<meta>,<link>单标签不闭合，在Doctype: HTML 4.01 Strict:<br>是正确写法，而<br />是错误的。HTML5标准下推荐不闭合写法。
 ```
 
 #### 1.4 标签使用符合语义化
@@ -45,33 +56,58 @@
         
 #### 1.5 标签嵌套正确
 ```      
-   * 内联元素不可以嵌套块级元素如：<a><div></div></a>错误；<a><span></span></a>正确
-   * <li>不可以单独使用，要与<ul>或<ol>配合使用
-   * <dd>或<dt>要与<dl>配合使用
+   *  内联元素不可以嵌套块级元素如：<a><div></div></a>错误；<a><span></span></a>正确
+   *  <li>不可以单独使用，要与<ul>或<ol>配合使用
+   *  <dd>或<dt>要与<dl>配合使用
 ```
 
 #### 1.6 标签一律采用小写编码  
 
 #### 1.7 编码风格格式化
-       块级元素新起一行，并统一缩进两个空格
+      块级元素新起一行，并统一缩进两个空格
+#### 1.8 图片需要加alt属性
+      <img src="xxx" alt="yyy"/>
+#### 1.9 图片html定义
+      *  <img src="xxx" alt="yyy" width="150px" height="50px"/>是错误的
+      *  <img src="xxx" alt="yyy" width="150" height="50"/>正确
 
 ### 2. 性能考虑
 #### 2.1 头部引用样式，底部引用脚本
+      *  样式头部加载可以逐步渲染页面
+      *  让你的脚本在你的文档加载完成后载入，让用户有更好的体验
 #### 2.2 减少无用标签的使用
+      最简单的代码实现最复杂的功能
 
 ### 3.利于后期维护
 #### 3.1 结构，样式，行为分离
-#### 3.2 不同模块之间做好注释
+      尽量不使用行内样式,需要的话，可以在公用样式中定义好，直接调用。
 
+#### 3.2 做好注释
+      *  不同模块之间做好注释，例如：<%-- 弹出层 --%>
+      *  特殊处理地方必须加好注释，如整体宽为1000，而后来新页面改为990，例如：<%-- 页面主内容宽度990 --%>
+      
 ### 4.W3C验证
-       W3C HTML validator：http://validator.w3.org/
+      W3C HTML validator：http://validator.w3.org/
 
 ## <a name='jsp'>JSP操作规则</a>
 #### 1. 完整页面编写时，确保头部存放推广代码
+      <%--推广代码 --%>
+        <layout:override name="title">新一站省心赔_保险快速理赔_保险省心理赔_保险理赔新标准_新一站保险网</layout:override>
+		<layout:override name="keywords">省心赔，快速理赔，理赔服务，轻松理赔，理赔查询</layout:override>
+		<layout:override name="description">新一站保险网会员专属理赔服务——“省心赔”，在线操作简单、理赔进度随时查询、理赔专家1对1为您服务，保险理赔流程的新标准，实时报案，实时受理让您的理赔更省心。
+		</layout:override>  
 #### 2. 引用样式调用压缩过的样式
-#### 3. 协助开发检查JSP标签是否嵌套正确
+	    <layout:override name="text_css">
+		  <focus:static src="/assets/css/claimsChannel.min.css" rel="stylesheet" type="text/css"></focus:static>
+		</layout:override>
+
+#### 3.协助开发检查JSP标签是否嵌套正确
 	    目的是不破坏HTML标签的完整闭合
+
 #### 4. 脚本使用放入JSP标签中
+     <layout:override name="text_javascript">
+       <script type="text/javascript" src="/script/jquery-1.4.2.js" charset="UTF-8"></script>
+     </layout:override>
 
 
 ## <a name='css'>CSS编码规范</a>
@@ -82,8 +118,10 @@
        *  assets下的样式分布图
 
 #### 1.2 命名规范
-      * 标签私有定义class,私有页面中不允许定义.btn这样的class
+      *  标签私有定义class,私有页面中不允许定义.btn这样的class
       *  span,p,li这样的标签最好单独定义class，避免如：ul li{xxx:xxx;}，原因是样式的解析是从右向左的，解释时会查找所有的li一遍，这样影响性能
+      *  中划线
+      *  驼峰式命名
 #### 1.3 编写要求
       * 尽量不顺便改动基础样式和公用LESS库
       * 优雅降级保证用户可以有更好的体验，但要保证其他存在浏览器的可使用性
@@ -104,6 +142,37 @@
 
 ### 2. LESS语法
 #### 2.1 LESS方法的使用
+    (1)变量：
+		 @whiteColor:#ffffff;
+		 .xxx{
+		    color:@whiteColor;
+		 }
+    (2)混合：
+			.clearfix() {
+			*zoom:1;
+			&:after {
+					display:block;
+					content:"";
+					width:0;
+					height:0;
+					font-size:0;
+					clear:both;
+					visibility:hidden;
+					overflow:hidden;
+			}
+	   }
+		 (3)定义参数使用，
+		 .size(@width, @height) {
+		    width: @width;
+	        height: @height;
+	   }
+		.box-shadow(@shadow) {
+				-webkit-box-shadow: @shadow;
+				-moz-box-shadow: @shadow;
+				box-shadow: @shadow;
+		}
+		 
+		
 
 ### 3. 性能考虑      
 #### 3.1 书写代码前，考虑好代码的重复利用率
@@ -218,7 +287,8 @@
        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
 ### 7. table样式定义
-       初始化表格样式放在reset中，table{border:0;margin:0;border-collapse:collapse;} table th, table td{padding:0;}
+       W3C标准中table，这样设置<table width="100%" border="0"></table>是错误的。
+       正确的可以在初始化表格样式时，放在reset中，table{border:0;margin:0;border-collapse:collapse;} table th, table td{padding:0;}
 
 ### 8. W3C验证
         W3C CSS validator：http://jigsaw.w3.org/css-validator/validator.html.zh-cn
