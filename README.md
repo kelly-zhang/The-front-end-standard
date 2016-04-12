@@ -66,7 +66,7 @@
 		*  nav定义导航链接部分
 		*  figure定义独立的流内容（图像、图表、照片、代码等等）
 		*  figcation定义figure元素的标题
-		*  [html标签定义查询地址](http://www.w3school.com.cn/tags/tag_comment.asp)
+		*  [html标签定义查询地址](http://www.w3school.com.cn/tags/tag_comment.asp/)
         
         
 #### 1.5 标签嵌套正确
