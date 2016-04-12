@@ -48,7 +48,7 @@
 #### 1.3 标签须闭合
 ```
    *  <div></div>,<p></p>,<ul></ul>,<ol></ol>,<h1></h1>等等。
-   *  <br>,<hr>,<img>,<input>,<meta>,<link>单标签不闭合，在Doctype: HTML 4.01 Strict:<br>是正确写法，而<br />是错误的。_HTML5标准下推荐不闭合写法_。
+   *  <br>,<hr>,<img>,<input>,<meta>,<link>单标签不闭合，在Doctype: HTML 4.01 Strict:<br>是正确写法，而<br />是错误的。HTML5标准下推荐不闭合写法。
 ```
 
 #### 1.4 标签使用符合语义化
