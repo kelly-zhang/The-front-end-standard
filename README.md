@@ -52,21 +52,21 @@
 ```
 
 #### 1.4 标签使用符合语义化
-		*  div用于布局，无特殊含义
-		*  span定义行内元素，【行内标签】
-		*  a定义超链接，【行内标签】
-		*  p定义段落，【行内标签】
-		*  audio定义声音
-		*  b定义粗体
-		*  section定义文档中的区段
-		*  article定义来自外部的源内容
-		*  aside定义article以外的内容，aside内容与article内容相关
-		*  header定义文档的页眉
-		*  footer定义文档或节的页脚
-		*  nav定义导航链接部分
-		*  figure定义独立的流内容（图像、图表、照片、代码等等）
-		*  figcation定义figure元素的标题
-		*  html标签定义查询地址：http://www.w3school.com.cn/tags/tag_comment.asp
+	*  div用于布局，无特殊含义
+	*  span定义行内元素，【行内标签】
+	*  a定义超链接，【行内标签】
+	*  p定义段落，【行内标签】
+	*  audio定义声音
+	*  b定义粗体
+	*  section定义文档中的区段
+	*  article定义来自外部的源内容
+	*  aside定义article以外的内容，aside内容与article内容相关
+	*  header定义文档的页眉
+	*  footer定义文档或节的页脚
+	*  nav定义导航链接部分
+	*  figure定义独立的流内容（图像、图表、照片、代码等等）
+	*  figcation定义figure元素的标题
+	*  html标签定义查询地址：http://www.w3school.com.cn/tags/tag_comment.asp
         
         
 #### 1.5 标签嵌套正确
