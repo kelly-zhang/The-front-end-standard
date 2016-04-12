@@ -109,7 +109,7 @@
       *  不同模块之间做好注释，例如：<!-- header -->，<!-- footer -->
       *  特殊处理地方必须加好注释，如整体宽为1000，而后来新页面改为990，例如：<%-- 页面主内容宽度990 --%>
       
-### <a name='ht4'>4.W3C验证</a>
+### <a name='ht4'>4.W3C结构验证</a>
       W3C HTML validator：[http://validator.w3.org/](http://validator.w3.org/)
 
 ## <a name='jsp'>JSP相关操作</a>
@@ -198,7 +198,7 @@
 					overflow:hidden;
 			}
 	   }
-		 (3)定义参数使用，
+        (3)定义参数使用：
 		 .size(@width, @height) {
 		    width: @width;
 	        height: @height;
@@ -208,7 +208,16 @@
 				-moz-box-shadow: @shadow;
 				box-shadow: @shadow;
 		}
-		 
+	(4)嵌套：
+	#id{
+	    .topBar{
+	        margin：0；
+	        width：100px;
+	        height:0;
+	    }
+	}
+	生成：
+	#id .topBar{margin：0； width：100px; height:0;}
 		
 
 ### <a name='css3'>3. 性能考虑</a>      
@@ -220,7 +229,7 @@
        头：header
        内容：content/container
        导航：nav
-			   主导航：mainbav
+       主导航：mainbav
        子导航：subnav
        顶导航：topnav
        左导航：leftsidebar
@@ -246,54 +255,52 @@
        加入：joinus
        指南：guild
        服务：service
-			   登录：login
+       登录：login
        登录条：loginbar
        注册：regsiter
        状态：status
-			   按钮：btn
-				  摘要: summary
+       按钮：btn
+       摘要: summary
        当前的: current
        小技巧：tips
        图标: icon
        注释：note
        投票：vote
-			   页脚：footer
+       页脚：footer
        合作伙伴：partner
        友情链接：friendlink
-			   版权：copyright
-
-
+       版权：copyright
 
 ### <a name='css5'>5. 浏览器兼容性 CSS hack</a>
        标识区别：区别IE6,IE7,IE8,FF。
-       1. IE都能识别* ; 标准浏览器(如FF)不能识别*；
+       1. IE都能识别*
        2. IE6能识别*，但不能识别 !important; IE6在样式前面加_
-       3. IE7能识别*，也能识别!important;
-       4. IE8能识别9 例如：background:red 9;
-       5. firefox不能识别*，但能识别!important;
+       3. IE7能识别*，也能识别!important
+       4. IE8能识别9 例如：background:red\9
+       5. firefox不能识别*，但能识别!important
 
-### <a name='css6'>6. 通知IE采用识别的最高模式。(特殊情况使用，待斟酌)</a>
-       <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
 ### <a name='css7'>7. table样式定义</a>
        W3C标准中table，这样设置<table width="100%" border="0"></table>是错误的。
-       正确的可以在初始化表格样式时，放在reset中，table{border:0;margin:0;border-collapse:collapse;} table th, table td{padding:0;}
+       正确的可以在初始化表格样式时，放在reset中，.xx-table{border:0;margin:0;border-collapse:collapse;} 
+       .xx-table .th, .xx-table .td{padding:0;}
+       
 ### <a name='css8'>8. 属性缩写</a>
 ```      
-			.xxx{
-			      padinng:0 20px;
-					   margin:10px 0 5px;
-					}
+.xxx{
+    padinng:0 20px;
+    margin:10px 0 5px;
+}
 ```
 ### <a name='css9'>9. 0和单位</a>   
 ```
-   /* 非必要情况下，0后面单位省略 */ 
-		 margin:0;
-		 padding:0;
+/* 非必要情况下，0后面单位省略 */ 
+margin:0;
+padding:0;
 ```
 
 
-### <a name='css10'>10. W3C验证</a>
+### <a name='css10'>10. W3C样式验证</a>
         W3C CSS validator：[http://jigsaw.w3.org/css-validator/validator.html.zh-cn](http://jigsaw.w3.org/css-validator/validator.html.zh-cn)
 
 ## <a name='web'>四、WEB标准参考</a>
@@ -310,5 +317,7 @@
   whatwg：[http://www.whatwg.org/specs/web-apps/current-work/multipage/](http://www.whatwg.org/specs/web-apps/current-work/multipage/)
   
   csswg：[http://dev.w3.org/csswg/](http://dev.w3.org/csswg/)
+  
+  w3School:[http://www.w3school.com.cn/](http://www.w3school.com.cn/)
 
 
