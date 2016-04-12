@@ -158,6 +158,7 @@
       *  尽量不随便改动基础样式和公用LESS库，如果需要，必须全站做好检查，可以在大版本发布前通知测试协助检查
       *  优雅降级可以保证用户有更好的体验，但要做到其他依然存在使用的浏览器的可访问性
       *  代码缩进一致
+      *  属性名与值之间，冒号之后加一个空格，保证一致性
 ``` 
 截图
 ``` 
@@ -180,22 +181,22 @@
 ### <a name='css2'>2. LESS语法</a>
 #### 2.1 LESS方法的使用
     (1)变量：
-		 @whiteColor:#ffffff;
+		 @whiteColor: #ffffff;
 		 .xxx{
-		    color:@whiteColor;
+		    color: @whiteColor;
 		 }
     (2)混合：
 			.clearfix() {
-			*zoom:1;
+			*zoom: 1;
 			&:after {
-					display:block;
-					content:"";
-					width:0;
-					height:0;
-					font-size:0;
-					clear:both;
-					visibility:hidden;
-					overflow:hidden;
+					display: block;
+					content: "";
+					width: 0;
+					height: 0;
+					font-size: 0;
+					clear: both;
+					visibility: hidden;
+					overflow: hidden;
 			}
 	   }
         (3)定义参数使用：
@@ -272,6 +273,7 @@
        版权：copyright
 
 ### <a name='css5'>5. 浏览器兼容性 CSS hack</a>
+       先不以为前提，看看是不是编码不符合规范，找寻其他解决办法
        标识区别：区别IE6,IE7,IE8,FF。
        1. IE都能识别*
        2. IE6能识别*，但不能识别 !important; IE6在样式前面加_
@@ -282,23 +284,30 @@
 
 ### <a name='css7'>7. table样式定义</a>
        W3C标准中table，这样设置<table width="100%" border="0"></table>是错误的。
-       正确的可以在初始化表格样式时，放在reset中，.xx-table{border:0;margin:0;border-collapse:collapse;} 
+       正确的可以在初始化表格样式时，放在reset中，.xx-table{border: 0;margin: 0;border-collapse: collapse;} 
        .xx-table .th, .xx-table .td{padding:0;}
        
 ### <a name='css8'>8. 属性缩写</a>
 ```      
 .xxx{
-    padinng:0 20px;
-    margin:10px 0 5px;
+    padinng: 0 20px;
+    margin: 10px 0 5px;
 }
 ```
 ### <a name='css9'>9. 0和单位</a>   
 ```
 /* 非必要情况下，0后面单位省略 */ 
-margin:0;
-padding:0;
+margin: 0;
+padding: 0;
 ```
-
+### <a name='css10'>10. 十六进制尽可能使用3个字符</a>   
+```
+.xx{
+    color: #fff;//推荐
+    color: #ffffff;//不推荐
+    
+}
+```
 
 ### <a name='css10'>10. W3C样式验证</a>
         W3C CSS validator：[http://jigsaw.w3.org/css-validator/validator.html.zh-cn](http://jigsaw.w3.org/css-validator/validator.html.zh-cn)
