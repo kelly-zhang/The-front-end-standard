@@ -66,7 +66,7 @@
 		*  nav定义导航链接部分
 		*  figure定义独立的流内容（图像、图表、照片、代码等等）
 		*  figcation定义figure元素的标题
-		*  html标签定义查询地址：[http://www.w3school.com.cn/tags/tag_comment.asp](http://www.w3school.com.cn/tags/tag_comment.asp)
+		*  html标签定义查询地址：http://www.w3school.com.cn/tags/tag_comment.asp
         
         
 #### 1.5 标签嵌套正确
@@ -103,7 +103,7 @@
 
 ### <a name='ht3'>3.利于后期维护</a>
 #### 3.1 结构，样式，行为分离
-       实例代码
+       实例代码---截图
 
 #### 3.2 做好注释
       *  不同模块之间做好注释，例如：<!-- header -->，<!-- footer -->
@@ -112,62 +112,70 @@
 ### <a name='ht4'>4.W3C验证</a>
       W3C HTML validator：[http://validator.w3.org/](http://validator.w3.org/)
 
-## <a name='jsp'>JSP操作规则</a>
+## <a name='jsp'>JSP相关操作</a>
 #### 1. 完整页面编写时，确保头部存放推广代码
 ```
-			  <%--推广代码 --%>
-      <layout:override name="title">新一站省心赔_保险快速理赔_保险省心理赔_保险理赔新标准_新一站保险网</layout:override>
-			  <layout:override name="keywords">省心赔，快速理赔，理赔服务，轻松理赔，理赔查询</layout:override>
-		   <layout:override name="description">新一站保险网会员专属理赔服务——“省心赔”，在线操作简单、理赔进度随时查询、理赔专家1对1为您服务，保险理赔流程的新标准，实时报案，实时受理让您的理赔更省心。
-		   </layout:override>  
+<%--推广代码 --%>
+<layout:override name="title">新一站省心赔_保险快速理赔_保险省心理赔_保险理赔新标准_新一站保险网</layout:override>
+<layout:override name="keywords">省心赔，快速理赔，理赔服务，轻松理赔，理赔查询</layout:override>
+<layout:override name="description">新一站保险网会员专属理赔服务——“省心赔”，在线操作简单、理赔进度随时查询、理赔专家1对1为您服务，保险理赔流程的新标准，实时报案，实时受理让您的理赔更省心。
+</layout:override>
 ```
 #### 2. 引用样式选择压缩过的样式
 ```
-			<layout:override name="text_css">
-		  <focus:static src="/assets/css/claimsChannel.min.css" rel="stylesheet"></focus:static>
-		  </layout:override>
+<layout:override name="text_css">
+  <focus:static src="/assets/css/claimsChannel.min.css" rel="stylesheet"></focus:static>
+</layout:override>
 ```
 
 #### 3.协助开发检查JSP标签是否嵌套正确
-	    之前遇到过的问题主要是jsp标签闭合的位置错误，导致静态页面显示异常。
+      之前遇到过的问题主要是jsp标签闭合的位置错误，导致静态页面兼容性问题。
 
 #### 4. 脚本使用放入JSP标签中
-     <layout:override name="text_javascript">
-       <script type="text/javascript" src="/script/jquery-1.4.2.js" charset="UTF-8"></script>
-     </layout:override>
-
+```
+<layout:override name="text_javascript">
+  <script type="text/javascript" src="/script/jquery-1.4.2.js" charset="UTF-8"></script>
+</layout:override>
+```
 
 ## <a name='css'>CSS编码规范</a>
 ### <a name='css1'>1.通用规则</a>
 
 #### 1.1 引用规范
-       *  GULP编译
-       *  assets下的样式分布图
+       *  GULP编译  ---截图
+       *  assets下的样式分布图 ---截图
 
 #### 1.2 命名规范
-      *  私有页面定义的class，应该有它具体的含义，遇到按钮可以定义如：prodDetailBtn或prod-detail-btn;此时不允许出现.btn这样的class
-      *  span,p,li这样的标签最好单独定义class，避免如：ul li{xxx:xxx;}，原因是样式的解析是从右向左的，解释时会查找所有的li一遍，这样影响性能
+      *  私有页面定义的class，应该有它具体的含义，遇到按钮可以定义如：prodListBtn或prod-list-btn;这里不允许出现.btn这样的class
+      *  span,p,li这样的标签最好单独定义class，避免如：
+```
+      ul li{xxx:xxx;}，原因是样式的解析是从右向左的，解时会查找所有的li，这样影响性能，降低效率
+```      
       *  单词之前加-中划线，命名上可看出它的含义，广告词类除外，如banner，advertisement禁止使用，原因是会被搜索引擎屏蔽
-      *  驼峰式命名:topBar等
-      *  id命名简短有意义，可采用中划线命名或驼峰命名，不强行要求这里
+      *  驼峰式命名如：topBar,prodDetail
+      *  id命名简短有意义，可采用中划线命名或驼峰命名
 #### 1.3 编写要求
-      *  尽量不顺便改动基础样式和公用LESS库
-      *  优雅降级保证用户可以有更好的体验，但要保证其他存在浏览器的可使用性
+      *  尽量不随便改动基础样式和公用LESS库，如果需要，必须全站做好检查，可以在大版本发布前通知测试协助检查
+      *  优雅降级可以保证用户有更好的体验，但要做到其他依然存在使用的浏览器的可访问性
       *  代码缩进一致
+``` 
+截图
+``` 
       *  每个样式属性后面加上“;”
-      *  尽量不使用行内样式,需要的话，可以在公用样式中定义好，直接调用。
+      *  尽量不使用行内样式,需要的话，可以在公用样式中定义好，直接调用。例如：`.ly-hide{display:none;}，可以直接调用.ly-hide，js中取出class来控制`
 			  
 #### 1.4 属性书写顺序 
       建议：布局定位属性–>自身属性–>文本属性–>其他属性
-      * 布局定位属性主要包括: `margin、padding、float（包括clear）、position（相应的top,right,bottom,left）、display、visibility、overflow等
-      * 自身属性主要包括: width & height & background & border
-      * 文本属性主要包括：font、color、text-align、text-decoration、text-indent等
-      * 其他属性包括: list-style(列表样式)、vertical-vlign、cursor、z-index(层叠顺序) 、zoom等
+      * 布局定位属性主要包括: `margin、padding、float（包括clear）、position（相应的top,right,bottom,left）、display、visibility、overflow等`
+      * 自身属性主要包括: `width & height & background & border`
+      * 文本属性主要包括：`font、color、text-align、text-decoration、text-indent等`
+      * 其他属性包括: `list-style(列表样式)、vertical-vlign、cursor、z-index(层叠顺序) 、zoom等`
+``` 
+截图
+```      
 
-#### 1.5 样式表种有中文字体，务必转成unicode码, 以避免编码错误时乱码
-       font-family:"microsoft yahei"; 
 #### 1.6 做好注释，大区块必须做，小区块特殊处理部分加好注释
-		//这里是xxx内容，编译时可以过滤掉注释
+       //这里是xxx内容，编译时可以过滤掉注释
 
 ### <a name='css2'>2. LESS语法</a>
 #### 2.1 LESS方法的使用
