@@ -32,7 +32,11 @@
 
 [8. 属性缩写](#css8)
 
-[10. W3C验证](#css9)
+[9. 0和单位](#css9)
+
+[10. 十六进制尽可能使用3个字符](#css10)
+
+[11. W3C验证](#css11)
 
 [四.WEB标准参考](#web)
 
@@ -40,79 +44,153 @@
 ### <a name='ht1'>1. 通用规则</a>
 
 #### 1.1 文档模式
-      统一采用标准模式，<!DOCTYPE html>，确保浏览器拥有一致的表现。
+     统一采用标准模式，<!DOCTYPE html>，确保浏览器拥有一致的表现
       
 #### 1.2 明确字符编码，用不带BOM头的UTF-8
-      <meta charest="utf-8">
+    <meta charest="utf-8">
 
 #### 1.3 标签须闭合
 ```
-   *  <div></div>,<p></p>,<ul></ul>,<ol></ol>,<h1></h1>等等。
-   *  <br>,<hr>,<img>,<input>,<meta>,<link>单标签不闭合，在Doctype: HTML 4.01 Strict:<br>是正确写法，而<br />是错误的。HTML5标准下推荐不闭合写法。
+*  <div></div>,<p></p>,<ul></ul>,<ol></ol>,<h1></h1>等等
+*  <br>,<hr>,<img>,<input>,<meta>,<link>单标签不闭合，在Doctype: HTML 4.01 Strict:<br>是正确写法，而<br />是错误的
+*  HTML5标准下推荐不闭合写法
 ```
 
 #### 1.4 标签使用符合语义化
-	*  div用于布局，无特殊含义
-	*  span定义行内元素，【行内标签】
-	*  a定义超链接，【行内标签】
-	*  p定义段落，【行内标签】
-	*  audio定义声音
-	*  b定义粗体
-	*  section定义文档中的区段
-	*  article定义来自外部的源内容
-	*  aside定义article以外的内容，aside内容与article内容相关
-	*  header定义文档的页眉
-	*  footer定义文档或节的页脚
-	*  nav定义导航链接部分
-	*  figure定义独立的流内容（图像、图表、照片、代码等等）
-	*  figcation定义figure元素的标题
-	*  html标签定义查询地址：http://www.w3school.com.cn/tags/tag_comment.asp
-        
+```
+*  div用于布局，无特殊含义
+*  span定义行内元素，【行内标签】
+*  a定义超链接，【行内标签】
+*  p定义段落，【行内标签】
+*  audio定义声音
+*  b定义粗体
+*  section定义文档中的区段
+*  article定义来自外部的源内容
+*  aside定义article以外的内容，aside内容与article内容相关
+*  header定义文档的页眉
+*  footer定义文档或节的页脚
+*  nav定义导航链接部分
+*  figure定义独立的流内容（图像、图表、照片、代码等等）
+*  figcation定义figure元素的标题
+*  html标签定义查询地址：[http://www.w3school.com.cn/tags/tag_comment.asp](http://www.w3school.com.cn/tags/tag_comment.asp)
+```        
         
 #### 1.5 标签嵌套正确
-       *  [内联元素不可以嵌套块级元素](#inline)
-       *  <li>不可以单独使用，要与<ul>或<ol>配合使用
-       *  <dd>或<dt>要与<dl>配合使用
-
-
-#### 1.6 标签一律采用小写编码  
-      div,p,span,a,h1,ul,li等等
-#### 1.7 编码风格格式化
-      *  块级元素新起一行，并统一缩进两个空格
-      *  每个块元素、列表元素或表格元素都独占一行，每个子元素都相对于父元素进行缩进。
-#### 1.8 图片
-      *  推荐写法：<img src="xxx" alt="yyy">禁止src为空，延迟加载的图片也要添加src属性值；alt可以告诉它这个图像是干什么的
-      *  <img src="xxx" alt="yyy" width="150px" height="50px">写法错误
-      *  <img src="xxx" alt="yyy" width="150" height="50">正确
-      
-#### 1.9  <a name='inline'>内联元素不可以嵌套块级元素</a>
+内联元素不可以嵌套块级元素
       *  块级元素一般用来搭建网站架构、布局、承载内容
       *  内联元素一般用来在网站内容中的某些细节或者部位，用以“强调、区分样式、上标、下标、锚点”等等。
       *  块级元素可以包含内联元素或某些块级元素，但内联元素不能包含块级元素，它只能包含其它内联元素。
       *  块级元素不能放在p里面。
       *  有几个特殊的块级元素只能包含内联元素，不能包含块级元素。如h1,h2,h3,h4,h5,h6,p,dt
-      *  块级元素与块级元素并列、内联元素与内联元素并列。（错误的：<div><h2></h2><span></span></div>)
+      *  块级元素与块级元素并列、内联元素与内联元素并列。
+```
+//wrong
+<div><h2></h2><span></span></div>
+```
+```
+<li>不可以单独使用，要与<ul>或<ol>配合使用
+```
+```
+<dd>或<dt>要与<dl>配合使用
+```
+
+
+#### 1.6 标签一律采用小写编码 
+```
+  <div>,<p>,<span>,<a>,<h1>,<ul>,<li>等等
+```
+#### 1.7 编码风格格式化
+块级子元素新起一行，并统一缩进两个空格
+
+每个块元素、列表元素或表格元素都独占一行，每个子元素都相对于父元素进行缩进。
+```
+//good
+<div class="top-container" title="让理赔更省心是我们的承诺！">
+  <div class="top-btn">
+	  <a href="/claims/report" class="btnClaim" target="_blank" title="我要理赔">我要理赔</a>
+		<a href="/claims/progress" class="btnTrackProgress" target="_blank" title="查询理赔进度">查询理赔进度</a>
+	</div>
+</div>
+```
+
+#### 1.8 图片
+```
+//good
+<img src="xxx" alt="yyy">禁止src为空，延迟加载的图片也要添加src属性值；alt可以告诉它这个图像是干什么的
+
+//bad
+<img src="xxx" alt="yyy" width="150px" height="50px">写法错误
+
+//good
+<img src="xxx" alt="yyy" width="150" height="50">正确
+```
+      
 
 ### <a name='ht2'>2. 性能考虑</a>
 #### 2.1 头部引用样式，底部引用脚本
-      *  样式头部加载，可以逐步渲染页面
-      *  脚本在文档加载完后载入，让用户有更好的体验
-      推荐写法
-      
-      不推荐写法
+样式头部加载，可以逐步渲染页面
+```
+//头部
+<layout:override name="text_css">
+  <focus:static src="/assets/css/skeleton.min.css" rel="stylesheet" type="text/css" ></focus:static>
+  <focus:static src="/assets/css/claimsChannel.min.css" rel="stylesheet" type="text/css"></focus:static>
+</layout:override>
+```
+脚本在文档加载完后载入，让用户有更好的体验
+```
+//底部
+<layout:override name="text_javascript">
+  <script type="text/javascript" src="/script/claims/claimsChannel.js" charset="UTF-8"></script>
+</layout:override>
+```
+
 #### 2.2 减少无用标签的使用
-      追求最简单的代码实现最复杂的功能
-      加例子：
+追求最简单的代码实现最复杂的功能
+```
+//bad
+<div>
+  <ul>
+	  <li></li>
+		<li></li>
+  </ul>
+</div>
+
+//good
+
+<ul>
+  <li></li>
+  <li></li>
+</ul>
+
+```
+
 
 ### <a name='ht3'>3.利于后期维护</a>
 #### 3.1 结构，样式，行为分离
-       实例代码---截图
 
 #### 3.2 做好注释
-      *  不同模块之间做好注释，例如：<!-- header -->，<!-- footer -->
-      *  特殊处理地方必须加好注释，如整体宽为1000，而后来新页面改为990，
-         例如：<%-- 页面主内容宽度990 --%>
-         截图
+不同模块之间做好注释
+```
+<!-- header -->
+
+<!-- main -->
+
+<!-- footer -->
+```
+
+特殊处理地方必须加好注释，如整体宽为1000，而后来新页面改为990
+```
+//good
+<div class="top-cont-bg">
+  <div id="main" class="w1010 fn-clear">
+    <div class="nav-bread"><a class="orign" href="/">新一站保险网</a><span>></span><a href="http://www.xyz.cn/claims/">理赔</a><span>></span>省心赔</div>
+    <div class="new-content"><%-- 页面主内容宽度990 --%>
+    </div>
+  </div>
+</div>
+
+```
+
       
 ### <a name='ht4'>4.W3C结构验证</a>
       W3C HTML validator：[http://validator.w3.org/](http://validator.w3.org/)
@@ -134,7 +212,7 @@
 ```
 
 #### 3.协助开发检查JSP标签是否嵌套正确
-      之前遇到过的问题主要是jsp标签闭合的位置错误，导致静态页面兼容性问题。
+      存在问题主要是jsp标签闭合的位置错误，导致静态页面兼容性问题。所以这一块我们可以在联调时帮忙检查
 
 #### 4. 脚本使用放入JSP标签中
 ```
@@ -147,26 +225,48 @@
 ### <a name='css1'>1.通用规则</a>
 
 #### 1.1 引用规范
-       *  GULP编译  ---截图
-       *  assets下的样式分布图 ---截图
+GULP编译 ：shift+鼠标右击，弹出命令行，直接gulp，即可编译LESS
+
+assets-webpages下的样式分布图
+
+![](http://192.168.51.22:9999/API/wp-content/uploads/2016/03/assets-webpages.jpg)
 
 #### 1.2 命名规范
-      *  私有页面定义的class，应该有它具体的含义，遇到按钮可以定义如：prodListBtn或prod-list-btn;这里不允许出现.btn这样的class
-      *  span,p,li这样的标签最好单独定义class，避免如：
-         ul li{xxx:xxx;}，原因是样式的解析是从右向左的，解时会查找所有的li，这样影响性能，降低效率
-      *  id命名简短有意义，可采用中划线命名或驼峰命名
-      *  约定js使用的class使用驼峰式命名如：topBar,prodDetail
-      *  样式使用单词之前加-中划线，并且命名上可看出它的含义，广告词类除外，如banner，advertisement禁止使用，原因是会被搜索引擎屏蔽
+私有页面定义的class，应该有它具体的含义，遇到按钮可以定义如：prodListBtn或prod-list-btn;这里不允许出现.btn这样的class
+     
+span,p,li这样的标签最好单独定义class，
+
+避免如：ul li{xxx:xxx;}，原因是样式的解析是从右向左的，解时会查找所有的li，这样影响性能，降低效率
+      
+id命名简短有意义，可采用中划线命名或驼峰命名
+
+**约定** js使用的class或id采用驼峰式命名如：topBar,prodDetail
+
+**约定** 样式使用的class或id采用单词之前加-中划线，并且命名上可看出它的含义，（广告词类除外，如banner，advertisement禁止使用，原因是会被搜索引擎屏蔽）
+
 #### 1.3 编写要求
       *  尽量不随便改动基础样式和公用LESS库，如果需要，必须全站做好检查，可以在大版本发布前通知测试协助检查
       *  优雅降级可以保证用户有更好的体验，但要做到其他依然存在使用的浏览器的可访问性
       *  代码缩进一致
       *  属性名与值之间，冒号之后加一个空格，保证一致性
-``` 
-截图
-``` 
       *  每个样式属性后面加上“;”
-      *  尽量不使用行内样式,需要的话，可以在公用样式中定义好，直接调用。例如：`.ly-hide{display:none;}，可以直接调用.ly-hide，js中取出class来控制`
+      *  尽量不使用行内样式,需要的话，可以在公用样式中定义好，直接调用。例如：.ly-hide{display:none;}，可以直接调用.ly-hide，js中取出class来控制
+``` 
+//good
+	.sxp-pop-cont{
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			z-index: 10003;
+			margin-left: -390px;
+			margin-top: -300px;
+			width: 730px;
+			height: 545px;
+			background: #fff;
+			text-align: center;
+	}
+``` 
+
 			  
 #### 1.4 属性书写顺序 
       建议：布局定位属性–>自身属性–>文本属性–>其他属性
@@ -175,7 +275,18 @@
       * 文本属性主要包括：`font、color、text-align、text-decoration、text-indent等`
       * 其他属性包括: `list-style(列表样式)、vertical-vlign、cursor、z-index(层叠顺序) 、zoom等`
 ``` 
-截图
+//good
+	.wechat-alert-bg{
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 10000;
+			width: 100%;
+			height: 100%;
+			background: #000;
+			opacity: 0.6;
+			filter: alpha(opacity=60);	
+	}
 ```      
 
 #### 1.6 做好注释，大区块必须做，小区块特殊处理部分加好注释
@@ -183,36 +294,37 @@
 
 ### <a name='css2'>2. LESS语法</a>
 #### 2.1 LESS方法的使用
-    (1)变量：
-		 @whiteColor: #ffffff;
-		 .xxx{
-		    color: @whiteColor;
-		 }
-    (2)混合：
-			.clearfix() {
-			*zoom: 1;
-			&:after {
-					display: block;
-					content: "";
-					width: 0;
-					height: 0;
-					font-size: 0;
-					clear: both;
-					visibility: hidden;
-					overflow: hidden;
-			}
-	   }
-        (3)定义参数使用：
-		 .size(@width, @height) {
-		    width: @width;
-	        height: @height;
-	   }
-		.box-shadow(@shadow) {
-				-webkit-box-shadow: @shadow;
-				-moz-box-shadow: @shadow;
-				box-shadow: @shadow;
+```
+(1)变量：
+	 @whiteColor: #ffffff;
+	 .xxx{
+			color: @whiteColor;
+	 }
+(2)混合：
+		.clearfix() {
+		*zoom: 1;
+		&:after {
+				display: block;
+				content: "";
+				width: 0;
+				height: 0;
+				font-size: 0;
+				clear: both;
+				visibility: hidden;
+				overflow: hidden;
 		}
-	(4)嵌套：
+	 }
+(3)定义参数使用：
+	 .size(@width, @height) {
+			width: @width;
+				height: @height;
+	 }
+	.box-shadow(@shadow) {
+			-webkit-box-shadow: @shadow;
+			-moz-box-shadow: @shadow;
+			box-shadow: @shadow;
+	}
+(4)嵌套：
 	#id{
 	    .topBar{
 	        margin：0；
@@ -221,7 +333,8 @@
 	    }
 	}
 	生成：
-	#id .topBar{margin：0； width：100px; height:0;}
+	#id .topBar{margin：0； width：100px; height: 0;}
+```	
 		
 
 ### <a name='css3'>3. 性能考虑</a>      
@@ -276,13 +389,15 @@
        版权：copyright
 
 ### <a name='css5'>5. 浏览器兼容性 CSS hack</a>
-       先不以为前提，看看是不是编码不符合规范，找寻其他解决办法
-       标识区别：区别IE6,IE7,IE8,FF。
-       1. IE都能识别*
-       2. IE6能识别*，但不能识别 !important; IE6在样式前面加_
-       3. IE7能识别*，也能识别!important
-       4. IE8能识别9 例如：background:red\9
-       5. firefox不能识别*，但能识别!important
+先不以为前提，看看是不是编码不符合规范，找寻其他解决办法
+```
+ 标识区别：区别IE6,IE7,IE8,FF。
+ 1. IE都能识别*
+ 2. IE6能识别*，但不能识别 !important; IE6在样式前面加_
+ 3. IE7能识别*，也能识别!important
+ 4. IE8能识别9 例如：background:red\9
+ 5. firefox不能识别*，但能识别!important
+```
 
 
 ### <a name='css7'>7. table样式定义</a>
@@ -308,11 +423,10 @@ padding: 0;
 .xx{
     color: #fff;//推荐
     color: #ffffff;//不推荐
-    
 }
 ```
 
-### <a name='css10'>10. W3C样式验证</a>
+### <a name='css11'>11. W3C样式验证</a>
         W3C CSS validator：[http://jigsaw.w3.org/css-validator/validator.html.zh-cn](http://jigsaw.w3.org/css-validator/validator.html.zh-cn)
 
 ## <a name='web'>四、WEB标准参考</a>
